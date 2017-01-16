@@ -1,0 +1,329 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Pets-API",
+		"_postman_id": "e11fa82b-8fe9-0c0d-1339-133da7ddcf42",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "apps",
+			"description": "",
+			"item": [
+				{
+					"name": "/app/",
+					"request": {
+						"url": "http://localhost/apps/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"app_id\": \"mobile\",\n\t\"app_secret\": \"test\"\n}"
+						},
+						"description": "Create new app"
+					},
+					"response": []
+				},
+				{
+					"name": "/app/access_token",
+					"request": {
+						"url": "http://localhost/apps/access_token/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"app_id\": \"mobile\",\n\t\"app_secret\": \"test\"\n}"
+						},
+						"description": "Create a token"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pets",
+			"description": "",
+			"item": [
+				{
+					"name": "/pets/",
+					"request": {
+						"url": "http://localhost/pets/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-APP-ID",
+								"value": "mobile",
+								"description": ""
+							},
+							{
+								"key": "X-APP-TOKEN",
+								"value": "ddb73c92-a172-4d4e-a880-657a78456a59",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/pets/",
+					"request": {
+						"url": "http://localhost/pets/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-APP-ID",
+								"value": "mobile",
+								"description": ""
+							},
+							{
+								"key": "X-APP-TOKEN",
+								"value": "ddb73c92-a172-4d4e-a880-657a78456a59",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Mac\",\n    \"species\": \"Dog\",\n    \"breed\": \"Shitzu\",\n    \"age\": 11,\n    \"store\": \"165851ca-cc02-4d8f-b2cb-71745ed14bfb\",\n    \"price\": \"1000.00\",\n    \"received_date\": \"2016-11-11T12:12:01Z\"\n\n}"
+						},
+						"description": "Add a new pet to collection"
+					},
+					"response": []
+				},
+				{
+					"name": "/pets/<pet_id>",
+					"request": {
+						"url": "http://localhost/pets/04fde234-bda8-49a4-b5b7-53d26679bd97",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-APP-ID",
+								"value": "mobile",
+								"description": ""
+							},
+							{
+								"key": "X-APP-TOKEN",
+								"value": "ddb73c92-a172-4d4e-a880-657a78456a59",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/pets/<pet_id>",
+					"request": {
+						"url": "http://localhost/pets/04fde234-bda8-49a4-b5b7-53d26679bd97",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-APP-ID",
+								"value": "mobile",
+								"description": ""
+							},
+							{
+								"key": "X-APP-TOKEN",
+								"value": "ddb73c92-a172-4d4e-a880-657a78456a59",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Alan\",\n    \"species\": \"Dog\",\n    \"breed\": \"Shitzu\",\n    \"age\": 11,\n    \"store\": \"165851ca-cc02-4d8f-b2cb-71745ed14bfb\",\n    \"price\": \"1000.00\",\n    \"received_date\": \"2016-11-11T12:12:01Z\"\n\n}"
+						},
+						"description": "Update a pet to collection"
+					},
+					"response": []
+				},
+				{
+					"name": "/pets/<pet_id>",
+					"request": {
+						"url": "http://localhost/pets/04fde234-bda8-49a4-b5b7-53d26679bd97",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-APP-ID",
+								"value": "mobile",
+								"description": ""
+							},
+							{
+								"key": "X-APP-TOKEN",
+								"value": "ddb73c92-a172-4d4e-a880-657a78456a59",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "stores",
+			"description": "",
+			"item": [
+				{
+					"name": "/stores/",
+					"request": {
+						"url": "http://localhost/stores/?page=1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-APP-ID",
+								"value": "mobile",
+								"description": ""
+							},
+							{
+								"key": "X-APP-TOKEN",
+								"value": "ddb73c92-a172-4d4e-a880-657a78456a59",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/stores/",
+					"request": {
+						"url": "http://localhost/stores/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-APP-ID",
+								"value": "mobile",
+								"description": ""
+							},
+							{
+								"key": "X-APP-TOKEN",
+								"value": "ddb73c92-a172-4d4e-a880-657a78456a59",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"neighborhood\":   \"Col La calma\",\n      \"street_address\": \"Av La Calma\",\n      \"city\":           \"Zapopan\",\n      \"state\":          \"JA\",\n      \"zip\":            \"45070\",\n      \"phone\":          \"667-996-9352\"\n}"
+						},
+						"description": "Add a new store to collection"
+					},
+					"response": []
+				},
+				{
+					"name": "/stores/<store_id>",
+					"request": {
+						"url": "http://localhost/stores/a7d30b0a-0ac2-4d9b-a2e0-b15f1c67522d",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-APP-ID",
+								"value": "mobile",
+								"description": ""
+							},
+							{
+								"key": "X-APP-TOKEN",
+								"value": "ddb73c92-a172-4d4e-a880-657a78456a59",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "/stores/<store_id>",
+					"request": {
+						"url": "http://localhost/stores/a7d30b0a-0ac2-4d9b-a2e0-b15f1c67522d",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-APP-ID",
+								"value": "mobile",
+								"description": ""
+							},
+							{
+								"key": "X-APP-TOKEN",
+								"value": "ddb73c92-a172-4d4e-a880-657a78456a59",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"neighborhood\":   \"Col La calma\",\n      \"street_address\": \"Av La Calma\",\n      \"city\":           \"Culiacan\",\n      \"state\":          \"MX\",\n      \"zip\":            \"45070\",\n      \"phone\":          \"667-996-9352\"\n}"
+						},
+						"description": "update store to collection"
+					},
+					"response": []
+				},
+				{
+					"name": "/stores/<store_id>",
+					"request": {
+						"url": "http://localhost/stores/a7d30b0a-0ac2-4d9b-a2e0-b15f1c67522d",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-APP-ID",
+								"value": "mobile",
+								"description": ""
+							},
+							{
+								"key": "X-APP-TOKEN",
+								"value": "ddb73c92-a172-4d4e-a880-657a78456a59",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "delete store to collection"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
