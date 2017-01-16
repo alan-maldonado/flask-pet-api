@@ -23,7 +23,7 @@ docker exec -it [container_name] mongo --host mongodb
 
 To run tests
 ```
-docker exec -it [container_name] python3 test.py
+docker exec -it [container_name] python3 tests.py
 ```
 
 Use `docker ps` to get the container name of the api.
