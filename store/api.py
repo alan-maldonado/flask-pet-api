@@ -96,7 +96,7 @@ class StoreAPI(MethodView):
                 "result": "ok",
                 "store": store_obj(store)
             }
-            return jsonify(response), 201
+            return jsonify(response), 200
 
     def delete(self, store_id):
         store = Store.objects.filter(external_id=store_id, live=True).first()
